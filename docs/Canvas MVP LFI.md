@@ -14,6 +14,7 @@ Propietario: Armando Fiestas Anton
 
 - **Suscriptores más activos de "Football Exchange & Systems":** Aquellos que ya comentan y buscan llevar su análisis de datos al mercado financiero.
 - **Hablantes de inglés/europeos:** Que buscan una herramienta técnica sencilla pero con respaldo humano.
+- **Idioma de la plataforma:** El idioma por defecto será **Inglés (English)**, con la opción de cambiar a **Español**.
 
 ### 3. Canales (Foco total)
 

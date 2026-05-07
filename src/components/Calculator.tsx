@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Calculator as CalcIcon } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /**
  * Calculadora interactiva para mostrar la diferencia entre el ahorro
@@ -9,6 +10,7 @@ import { Calculator as CalcIcon } from "lucide-react";
  * @returns {JSX.Element} El componente de la calculadora.
  */
 export const Calculator = () => {
+  const { t } = useLanguage();
   const [initialAmount, setInitialAmount] = useState<number>(1000);
   const [monthlyContribution, setMonthlyContribution] = useState<number>(200);
   const [years, setYears] = useState<number>(10);
@@ -39,15 +41,15 @@ export const Calculator = () => {
           <div className="w-16 h-16 rounded-full bg-pch-primary/10 flex items-center justify-center mb-6">
             <CalcIcon className="w-8 h-8 text-pch-primary" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">Calculadora de Validación</h2>
-          <p className="text-foreground">Descubre el costo de NO invertir a largo plazo.</p>
+          <h2 className="text-3xl font-bold text-white mb-2">{t.calculator.title}</h2>
+          <p className="text-foreground">{t.calculator.subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div>
               <label className="block text-xs font-semibold text-pch-primary mb-2 uppercase tracking-wide">
-                Capital Inicial ($)
+                {t.calculator.label_initial}
               </label>
               <input
                 type="number"
@@ -58,7 +60,7 @@ export const Calculator = () => {
             </div>
             <div>
               <label className="block text-xs font-semibold text-pch-primary mb-2 uppercase tracking-wide">
-                Aporte Mensual ($)
+                {t.calculator.label_monthly}
               </label>
               <input
                 type="number"
@@ -69,7 +71,7 @@ export const Calculator = () => {
             </div>
             <div>
               <label className="block text-xs font-semibold text-pch-primary mb-2 uppercase tracking-wide">
-                Años invirtiendo
+                {t.calculator.label_years}
               </label>
               <input
                 type="number"
@@ -81,24 +83,26 @@ export const Calculator = () => {
           </div>
 
           <div className="bg-[#0b241c] rounded-3xl p-8 border border-pch-border/50 flex flex-col justify-center h-full">
-            <h3 className="text-lg font-bold text-white mb-6 text-center">Tus resultados en {years} años</h3>
+            <h3 className="text-lg font-bold text-white mb-6 text-center">
+              {t.calculator.results_title.replace("{years}", years.toString())}
+            </h3>
             
             <div className="space-y-6">
               <div>
-                <p className="text-sm text-foreground mb-1">Ahorro Tradicional (2%)</p>
+                <p className="text-sm text-foreground mb-1">{t.calculator.savings}</p>
                 <p className="text-2xl font-bold text-white">${traditionalValue.toLocaleString()}</p>
               </div>
               
               <div className="h-[1px] w-full bg-pch-border/50" />
               
               <div>
-                <p className="text-sm text-pch-primary mb-1 font-medium">Inversión Pasiva (8%)</p>
+                <p className="text-sm text-pch-primary mb-1 font-medium">{t.calculator.investment}</p>
                 <p className="text-4xl font-bold text-pch-primary">${investmentValue.toLocaleString()}</p>
               </div>
 
               <div className="bg-pch-primary/10 rounded-xl p-4 mt-4">
                 <p className="text-sm text-white text-center">
-                  Estás perdiendo <span className="font-bold text-pch-secondary">${difference.toLocaleString()}</span> por no invertir.
+                  {t.calculator.losing_msg} <span className="font-bold text-pch-secondary">${difference.toLocaleString()}</span> {t.calculator.not_investing_msg}
                 </p>
               </div>
             </div>

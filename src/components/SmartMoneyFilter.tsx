@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { BarChart3, Activity } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /** Mock para obtener datos de Smart Money */
 const fetchSmartMoneyData = async () => {
@@ -16,7 +17,12 @@ const fetchSmartMoneyData = async () => {
   ];
 };
 
+/**
+ * Componente que muestra una lista simulada de activos con alto volumen.
+ * @returns {JSX.Element} La tabla de filtro de Smart Money.
+ */
 export const SmartMoneyFilter = () => {
+  const { t } = useLanguage();
   const { data, isLoading } = useQuery({
     queryKey: ["smartMoneyList"],
     queryFn: fetchSmartMoneyData,
@@ -26,10 +32,10 @@ export const SmartMoneyFilter = () => {
     <section id="smart-money" className="py-20 px-6 max-w-6xl mx-auto w-full">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Filtro Smart Money <span className="text-pch-primary">Gratuito</span>
+          {t.filter.title} <span className="text-pch-primary">{t.filter.free}</span>
         </h2>
         <p className="text-foreground max-w-2xl mx-auto">
-          Monitorea las empresas con mayor volumen institucional en el mercado, actualizadas constantemente.
+          {t.filter.description}
         </p>
       </div>
 
@@ -41,24 +47,24 @@ export const SmartMoneyFilter = () => {
           <div className="w-12 h-12 rounded-full bg-pch-primary/20 flex items-center justify-center">
             <Activity className="w-6 h-6 text-pch-primary" />
           </div>
-          <h3 className="text-xl font-bold text-white">Top 5 Volumen Activo</h3>
+          <h3 className="text-xl font-bold text-white">{t.filter.table_title}</h3>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-pch-border text-xs text-pch-primary font-semibold tracking-wider">
-                <th className="pb-4 pl-4">ACTIVO</th>
-                <th className="pb-4">VOLUMEN</th>
-                <th className="pb-4">CAMBIO</th>
-                <th className="pb-4 text-right pr-4">ACCIÓN</th>
+                <th className="pb-4 pl-4">{t.filter.col_asset}</th>
+                <th className="pb-4">{t.filter.col_volume}</th>
+                <th className="pb-4">{t.filter.col_change}</th>
+                <th className="pb-4 text-right pr-4">{t.filter.col_action}</th>
               </tr>
             </thead>
             <tbody>
               {isLoading ? (
                 <tr>
                   <td colSpan={4} className="py-8 text-center text-foreground">
-                    Cargando datos del mercado...
+                    {t.filter.loading}
                   </td>
                 </tr>
               ) : (
@@ -83,7 +89,7 @@ export const SmartMoneyFilter = () => {
                     </td>
                     <td className="py-4 text-right pr-4">
                       <button className="bg-[#0b241c] border border-pch-border text-pch-primary rounded-full px-4 py-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity hover:bg-pch-primary hover:text-[#0b241c]">
-                        Ver Detalle
+                        {t.filter.btn_view}
                       </button>
                     </td>
                   </tr>
