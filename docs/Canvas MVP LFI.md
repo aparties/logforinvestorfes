@@ -11,7 +11,7 @@ Propietario: Armando Fiestas Anton
     - **Básico:** Inversión pasiva por **$67**.
     - **Intermedio:** Inversión activa basada en Stan Weinstein por **$147**.
     - **Bundle:** Ambos cursos por **$167**.
-- **Validación de Estrategia:** Calculadora interactiva simple que muestra el poder del largo plazo frente al ahorro tradicional.
+- **Validación de Estrategia:** Calculadora interactiva simple que muestra el poder del largo plazo (usando el estándar de inversión pasiva **VOO** al 8% histórico) frente al ahorro tradicional.
 
 ### 2. Segmentos de Clientes (Prioridad)
 
