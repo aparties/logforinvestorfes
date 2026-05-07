@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { SmartMoneyFilter } from "@/components/SmartMoneyFilter";
 import { Calculator } from "@/components/Calculator";
@@ -13,8 +14,11 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-start bg-background overflow-x-hidden">
       {/* Header simple para la Landing */}
       <header className="w-full max-w-6xl mx-auto py-6 px-6 flex items-center justify-between z-10">
-        <div className="text-2xl font-bold tracking-tight text-white">
-          log<span className="text-pch-primary">forinvestor</span>.com
+        <div className="flex items-center gap-3">
+          <Image src="/logo.svg" alt="logforinvestor logo" width={32} height={32} />
+          <div className="text-2xl font-bold tracking-tight text-white hidden sm:block">
+            log<span className="text-pch-primary">forinvestor</span>.com
+          </div>
         </div>
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex gap-6">
