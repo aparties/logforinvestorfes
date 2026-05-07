@@ -7,7 +7,10 @@ Propietario: Armando Fiestas Anton
 ### 1. Propuesta de Valor (MVP)
 
 - **Filtro de "Smart Money":** Acceso gratuito a la lista de las 500 mejores empresas por volumen (datos de TradingView) para atraer tráfico.
-- **Curso "Inversión Pasiva 101":** Un método directo para empezar a invertir sin complicaciones por **$30**.
+- **Cursos de Inversión:** 
+    - **Básico:** Inversión pasiva por **$67**.
+    - **Intermedio:** Inversión activa basada en Stan Weinstein por **$147**.
+    - **Bundle:** Ambos cursos por **$167**.
 - **Validación de Estrategia:** Calculadora interactiva simple que muestra el poder del largo plazo frente al ahorro tradicional.
 
 ### 2. Segmentos de Clientes (Prioridad)
@@ -29,8 +32,9 @@ Propietario: Armando Fiestas Anton
 ### 5. Fuentes de Ingresos (MVP)
 
 - **Venta directa via Stripe:**
-    - Nivel 1 ($30).
-    - Nivel 2 ($70).
+    - Curso Básico ($67).
+    - Curso Intermedio ($147).
+    - Bundle Básico + Intermedio ($167).
 - **Sin suscripciones:** Solo pagos únicos para reducir la fricción inicial.
 
 ### 6. Actividades Clave (Lo mínimo necesario)

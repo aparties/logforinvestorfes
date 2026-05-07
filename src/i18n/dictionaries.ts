@@ -4,7 +4,7 @@ export const dictionaries = {
   en: {
     nav: {
       filter: "Smart Money Filter",
-      course: "Course 101",
+      course: "Courses",
     },
     hero: {
       title: "Invest with logic, not magic promises",
@@ -39,17 +39,33 @@ export const dictionaries = {
     course: {
       title: "From Spectator to Investor",
       subtitle: "A direct, uncomplicated method based on the Weinstein system to start investing passively and safely.",
-      badge: "Special MVP",
-      course_name: "Passive Investing 101 Course",
-      course_desc: "The system you need to trade without stress.",
-      price: "$30",
+      badge_basic: "Basic",
+      badge_intermediate: "Intermediate",
+      badge_bundle: "Best Value",
+      course_basic_name: "Passive Investing",
+      course_basic_desc: "The basic system to trade without stress.",
+      course_basic_price: "$67",
+      course_int_name: "Active Investing (Weinstein)",
+      course_int_desc: "Advanced methods to time the market.",
+      course_int_price: "$147",
+      course_bundle_name: "Full Bundle (Basic + Int)",
+      course_bundle_desc: "Get both courses and master the market.",
+      course_bundle_price: "$167",
       payment_type: "one-time payment",
-      features: [
-        "Lifetime access to 5-10 video lessons.",
-        "Learn to read Smart Money.",
+      features_basic: [
+        "Lifetime access to basic video lessons.",
         "Basic use of the Weinstein system.",
-        "Automated access after payment.",
-        "No hidden subscriptions."
+        "Automated access after payment."
+      ],
+      features_int: [
+        "Lifetime access to intermediate video lessons.",
+        "Learn to read Smart Money deeply.",
+        "Advanced use of the Weinstein system."
+      ],
+      features_bundle: [
+        "All features from Basic and Intermediate.",
+        "Complete mastering of the system.",
+        "Best value for your money."
       ],
       btn_buy: "Buy Immediate Access",
       stripe_msg: "Secure payment processed by Stripe.",
@@ -61,7 +77,7 @@ export const dictionaries = {
   es: {
     nav: {
       filter: "Filtro Smart Money",
-      course: "Curso 101",
+      course: "Cursos",
     },
     hero: {
       title: "Invierte con lógica, no con promesas mágicas",
@@ -96,17 +112,33 @@ export const dictionaries = {
     course: {
       title: "Pasa de Espectador a Inversor",
       subtitle: "Un método directo, sin complicaciones y basado en el sistema de Weinstein para empezar a invertir de forma pasiva y protegida.",
-      badge: "MVP Especial",
-      course_name: "Curso Inversión Pasiva 101",
-      course_desc: "El sistema que necesitas para operar sin estrés.",
-      price: "$30",
+      badge_basic: "Básico",
+      badge_intermediate: "Intermedio",
+      badge_bundle: "Mejor Valor",
+      course_basic_name: "Inversión Pasiva",
+      course_basic_desc: "El sistema básico que necesitas para operar sin estrés.",
+      course_basic_price: "$67",
+      course_int_name: "Inversión Activa (Weinstein)",
+      course_int_desc: "Métodos avanzados para analizar el mercado.",
+      course_int_price: "$147",
+      course_bundle_name: "Bundle (Básico + Int)",
+      course_bundle_desc: "Obtén ambos cursos y domina el mercado.",
+      course_bundle_price: "$167",
       payment_type: "pago único",
-      features: [
-        "Acceso de por vida a 5-10 lecciones en video.",
-        "Aprende a leer el Smart Money.",
+      features_basic: [
+        "Acceso de por vida a lecciones básicas.",
         "Uso básico del sistema de Weinstein.",
-        "Acceso automatizado post-pago.",
-        "Sin suscripciones ocultas."
+        "Acceso automatizado post-pago."
+      ],
+      features_int: [
+        "Acceso de por vida a lecciones intermedias.",
+        "Aprende a leer el Smart Money en profundidad.",
+        "Uso avanzado del sistema de Weinstein."
+      ],
+      features_bundle: [
+        "Todas las características de Básico e Intermedio.",
+        "Dominio completo del sistema.",
+        "La mejor relación calidad-precio."
       ],
       btn_buy: "Comprar Acceso Inmediato",
       stripe_msg: "Pago seguro procesado por Stripe.",
