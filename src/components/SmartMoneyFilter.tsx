@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { BarChart3, Activity } from "lucide-react";
+import { BarChart3, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 /** Mock para obtener datos de Smart Money */
@@ -45,7 +45,7 @@ export const SmartMoneyFilter = () => {
 
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-full bg-pch-primary/20 flex items-center justify-center">
-            <Activity className="w-6 h-6 text-pch-primary" />
+            <TrendingUp className="w-6 h-6 text-pch-primary" />
           </div>
           <h3 className="text-xl font-bold text-foreground dark:text-white">{t.filter.table_title}</h3>
         </div>
