@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 :root {
+  /* Modo Claro - Tonos verdes suaves y limpios */
+  --background: #f4fbf8;
+  --foreground: #0b241c;
+  
+  --primary: #2d9368; /* Verde más oscuro para legibilidad sobre blanco */
+  --secondary: #57cc99;
+  --card: #ffffff;
+  --input: #eaf5f0;
+  --border: #d1e6dd;
+}
+
+.dark {
+  /* Modo Oscuro - Skiz-Inspired original */
   --background: #0b241c;
   --foreground: #a8b5b0;
   
