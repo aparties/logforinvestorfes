@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Hero } from "@/components/Hero";
 import { SmartMoneyFilter } from "@/components/SmartMoneyFilter";
@@ -14,6 +14,7 @@ export default function Home() {
   const { t, language, setLanguage } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Evitar hydration mismatch
   // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -22,14 +23,14 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start bg-background overflow-x-hidden transition-colors duration-300">
       {/* Header simple para la Landing */}
-      <header className="w-full max-w-6xl mx-auto py-6 px-6 flex items-center justify-between z-10">
+      <header className="w-full max-w-6xl mx-auto py-6 px-6 flex items-center justify-between z-10 relative">
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="logforinvestor logo" width={32} height={32} className="dark:brightness-200" />
           <div className="text-2xl font-bold tracking-tight text-foreground dark:text-white hidden sm:block">
             log<span className="text-pch-primary">forinvestor</span>.com
           </div>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           <nav className="hidden md:flex gap-6">
             <a href="#smart-money" className="text-sm font-medium text-foreground dark:text-white hover:text-pch-primary transition-colors">
               {t.nav.filter}
@@ -39,7 +40,7 @@ export default function Home() {
             </a>
           </nav>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             {/* Theme Switcher */}
             {mounted && (
               <button
@@ -66,8 +67,39 @@ export default function Home() {
                 ES
               </button>
             </div>
+
+            {/* Hamburger Button (Mobile Only) */}
+            <button 
+              className="md:hidden p-2 rounded-lg border border-pch-border bg-pch-card text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full left-0 w-full px-6 md:hidden z-20">
+            <div className="bg-pch-card border border-pch-border rounded-2xl p-4 shadow-xl flex flex-col gap-4">
+              <a 
+                href="#smart-money" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-bold text-foreground dark:text-white hover:text-pch-primary"
+              >
+                {t.nav.filter}
+              </a>
+              <div className="h-[1px] w-full bg-pch-border/50" />
+              <a 
+                href="#curso" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-bold text-pch-primary hover:text-pch-secondary"
+              >
+                {t.nav.course}
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
