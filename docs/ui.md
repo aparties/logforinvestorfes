@@ -4,15 +4,23 @@ Este documento define la identidad visual "Modern & Trendy" inspirada en el mode
 
 ## 1. Paleta de Colores
 
-### Fondos (Backgrounds)
-- **Principal**: `#0b241c` (Bosque Oscuro Profundo).
-- **Secundario**: `#143028` (Para cards y secciones).
-- **Inputs/Campos**: `#081a14` (Más oscuro que el fondo principal para dar profundidad).
+### Modo Oscuro (Original)
+- **Background**: `#0b241c` (Bosque Oscuro Profundo).
+- **Foreground**: `#a8b5b0` (Gris verdoso suave).
+- **Card**: `#143028` (Para cards y secciones).
+- **Input**: `#081a14` (Más oscuro que el fondo principal para dar profundidad).
+- **Border**: `#1d4034` (Sutiles y de bajo contraste).
 
-### Acentos y Acciones
-- **Primario (Mint)**: `#57cc99` (Usar para botones principales y éxitos).
-- **Secundario (Sage)**: `#80ed99` (Para degradados y decoraciones).
-- **Iconos**: Círculos de fondo `#57cc99/20` con icono en `#57cc99`.
+### Modo Claro (Nuevo)
+- **Background**: `#f4fbf8` (Verde clarito/blanco).
+- **Foreground**: `#0b241c` (Texto oscuro legible).
+- **Card**: `#ffffff` (Tarjetas blancas).
+- **Input**: `#eaf5f0` (Inputs con ligero fondo verde).
+- **Border**: `#d1e6dd` (Bordes visibles pero suaves).
+
+### Acentos y Acciones (Ambos modos)
+- **Primario (Mint)**: `#57cc99` en Dark, `#2d9368` en Light (para accesibilidad).
+- **Secundario (Sage)**: `#80ed99`.
 
 ## 2. Formas y Bordes (Shapes)
 - **Botones**: `rounded-full` (Pill-shaped).
