@@ -35,6 +35,9 @@ export default function Home() {
             <a href="#smart-money" className="text-sm font-medium text-foreground dark:text-white hover:text-pch-primary transition-colors">
               {t.nav.filter}
             </a>
+            <a href="#calculator" className="text-sm font-medium text-foreground dark:text-white hover:text-pch-primary transition-colors">
+              {t.nav.calculator}
+            </a>
             <a href="#curso" className="text-sm font-medium text-pch-primary hover:text-pch-secondary transition-colors">
               {t.nav.course}
             </a>
@@ -88,6 +91,14 @@ export default function Home() {
                 className="text-sm font-bold text-foreground dark:text-white hover:text-pch-primary"
               >
                 {t.nav.filter}
+              </a>
+              <div className="h-[1px] w-full bg-pch-border/50" />
+              <a 
+                href="#calculator" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-bold text-foreground dark:text-white hover:text-pch-primary"
+              >
+                {t.nav.calculator}
               </a>
               <div className="h-[1px] w-full bg-pch-border/50" />
               <a 

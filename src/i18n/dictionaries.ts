@@ -4,6 +4,7 @@ export const dictionaries = {
   en: {
     nav: {
       filter: "Smart Money Filter",
+      calculator: "Calculator",
       course: "Courses",
     },
     hero: {
@@ -77,6 +78,7 @@ export const dictionaries = {
   es: {
     nav: {
       filter: "Filtro Smart Money",
+      calculator: "Calculadora",
       course: "Cursos",
     },
     hero: {

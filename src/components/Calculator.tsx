@@ -33,7 +33,7 @@ export const Calculator = () => {
   const difference = investmentValue - traditionalValue;
 
   return (
-    <section className="py-20 px-6 max-w-4xl mx-auto w-full">
+    <section id="calculator" className="py-20 px-6 max-w-4xl mx-auto w-full">
       <div className="bg-pch-card border border-pch-border rounded-[40px] p-6 md:p-12 shadow-2xl relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-pch-secondary/5 rounded-full blur-[100px]" />
 
