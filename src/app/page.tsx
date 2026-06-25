@@ -9,6 +9,7 @@ import { SmartMoneyFilter } from "@/components/SmartMoneyFilter";
 import { Calculator } from "@/components/Calculator";
 import { CourseOffer } from "@/components/CourseOffer";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { AuthButton } from "@/components/AuthButton";
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -70,6 +71,9 @@ export default function Home() {
                 ES
               </button>
             </div>
+
+            {/* Auth Button */}
+            <AuthButton />
 
             {/* Hamburger Button (Mobile Only) */}
             <button 

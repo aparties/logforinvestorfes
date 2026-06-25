@@ -73,6 +73,10 @@ export const dictionaries = {
     },
     footer: {
       rights: "All rights reserved.",
+    },
+    auth: {
+      signIn: "Sign in with Google",
+      signOut: "Sign out",
     }
   },
   es: {
@@ -147,6 +151,10 @@ export const dictionaries = {
     },
     footer: {
       rights: "Todos los derechos reservados.",
+    },
+    auth: {
+      signIn: "Iniciar sesión con Google",
+      signOut: "Cerrar sesión",
     }
   }
 };
