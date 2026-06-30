@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const LAST_UPDATED = "June 29, 2025";
-const OWNER = "Bicode Control";
+const OWNER = "Armando Fiestas";
 const EMAIL = "footballexchangesystems@gmail.com";
 const SITE = "logforinvestor.com";
 const REFUND_WINDOW_DAYS = 30;

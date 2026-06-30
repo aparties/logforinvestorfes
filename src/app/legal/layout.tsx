@@ -45,7 +45,7 @@ export default function LegalLayout({ children }: { children: ReactNode }) {
       <footer className="border-t border-pch-border mt-auto">
         <div className="max-w-4xl mx-auto px-6 py-6 text-center text-xs text-foreground/40">
           <p>
-            © {new Date().getFullYear()} logforinvestor.com — Bicode Control. All rights reserved.
+            © {new Date().getFullYear()} logforinvestor.com — Armando Fiestas. All rights reserved.
           </p>
           <div className="flex justify-center gap-4 mt-2">
             {legalLinks.map((link) => (
