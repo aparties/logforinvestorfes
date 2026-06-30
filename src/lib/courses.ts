@@ -44,13 +44,13 @@ export const COURSES: Record<CourseId, Course> = {
         id: "lesson-2",
         title: { en: "Module 2", es: "Módulo 2" },
         duration: "",
-        bunnyVideoId: "fc760048-bbf0-45b3-a808-eb12f9a11c0f",
+        bunnyVideoId: "4e2dc924-d1d9-4070-88c9-61bcbd18eddc",
       },
       {
         id: "lesson-3",
         title: { en: "Module 3", es: "Módulo 3" },
         duration: "",
-        bunnyVideoId: "f4229dee-9aa2-4506-b1dd-7241fb39ab70",
+        bunnyVideoId: "0445a2bb-5a35-478a-bc11-c3702d68c7b8",
       },
       {
         id: "lesson-4",
@@ -68,13 +68,13 @@ export const COURSES: Record<CourseId, Course> = {
         id: "lesson-6",
         title: { en: "Module 6", es: "Módulo 6" },
         duration: "",
-        bunnyVideoId: "0445a2bb-5a35-478a-bc11-c3702d68c7b8",
+        bunnyVideoId: "f4229dee-9aa2-4506-b1dd-7241fb39ab70",
       },
       {
         id: "lesson-7",
         title: { en: "Module 7", es: "Módulo 7" },
         duration: "",
-        bunnyVideoId: "4e2dc924-d1d9-4070-88c9-61bcbd18eddc",
+        bunnyVideoId: "fc760048-bbf0-45b3-a808-eb12f9a11c0f",
       },
       {
         id: "lesson-8",
