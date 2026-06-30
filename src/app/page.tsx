@@ -133,6 +133,14 @@ export default function Home() {
       <footer className="w-full border-t border-pch-border mt-auto">
         <div className="max-w-6xl mx-auto py-8 px-6 text-center text-sm text-foreground">
           <p>© {new Date().getFullYear()} logforinvestor.com - {t.footer.rights}</p>
+          <div className="flex justify-center gap-6 mt-3 text-xs text-foreground/50">
+            <a href="/legal/privacy" className="hover:text-pch-primary transition-colors">Privacy Policy</a>
+            <a href="/legal/terms" className="hover:text-pch-primary transition-colors">Terms of Service</a>
+            <a href="/legal/refunds" className="hover:text-pch-primary transition-colors">Refund Policy</a>
+          </div>
+          <p className="text-xs text-foreground/30 mt-3 max-w-2xl mx-auto">
+            Educational purposes only. Not financial advice. All investments carry risk.
+          </p>
         </div>
       </footer>
     </main>
