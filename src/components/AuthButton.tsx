@@ -3,7 +3,8 @@
 import { useAuth } from "@/context/AuthContext";
 import { useLanguage } from "@/i18n/LanguageContext";
 import Image from "next/image";
-import { LogOut, User } from "lucide-react";
+import Link from "next/link";
+import { LogOut, User, GraduationCap } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -44,7 +45,7 @@ function GoogleIcon() {
  */
 export function AuthButton() {
   const { user, isLoading, signInWithGoogle, signOut } = useAuth();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [signingIn, setSigningIn] = useState(false);
 
@@ -118,6 +119,15 @@ export function AuthButton() {
                   {user.email}
                 </p>
               </div>
+              {/* Mis Cursos */}
+              <Link
+                href="/dashboard"
+                onClick={() => setMenuOpen(false)}
+                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-foreground dark:text-white hover:bg-pch-input transition-colors"
+              >
+                <GraduationCap className="w-4 h-4 flex-shrink-0 text-pch-primary" />
+                {language === "es" ? "Mis Cursos" : "My Courses"}
+              </Link>
               {/* Cerrar sesión */}
               <button
                 id="auth-signout-btn"
