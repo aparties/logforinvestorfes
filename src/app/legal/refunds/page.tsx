@@ -10,7 +10,7 @@ const LAST_UPDATED = "June 29, 2025";
 const OWNER = "Armando Fiestas";
 const EMAIL = "footballexchangesystems@gmail.com";
 const SITE = "logforinvestor.com";
-const REFUND_WINDOW_DAYS = 30;
+const REFUND_WINDOW_DAYS = 14;
 
 export default function RefundPolicyPage() {
   return (
