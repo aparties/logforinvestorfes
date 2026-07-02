@@ -1,25 +1,24 @@
-import { createClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const { origin } = new URL(request.url);
-  const supabase = await createClient();
-
-  // Usa el origin dinámico para soportar tanto localhost como producción
-  const redirectTo = `${origin}/auth/callback`;
-
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo,
-      skipBrowserRedirect: true,
-    },
-  });
-
-  if (error || !data?.url) {
+  
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  if (!clientId) {
+    console.error("Missing GOOGLE_CLIENT_ID env variable");
     return NextResponse.redirect(`${origin}/auth/error`);
   }
 
-  // Redirección manual desde el lado del servidor
-  return NextResponse.redirect(data.url);
+  // URI de redireccionamiento bajo nuestro propio dominio
+  const redirectUri = `${origin}/api/auth/callback/google`;
+  
+  // URL de autorización directa de Google
+  const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?` + 
+    `client_id=${encodeURIComponent(clientId)}` +
+    `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+    `&response_type=code` +
+    `&scope=openid%20profile%20email` +
+    `&prompt=select_account`;
+
+  return NextResponse.redirect(googleAuthUrl);
 }
