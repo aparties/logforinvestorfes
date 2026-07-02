@@ -24,7 +24,7 @@ export const CourseLessonsGrid = ({ course }: CourseLessonsGridProps) => {
           <BookOpen className="w-5 h-5 text-pch-primary" />
         </div>
         <div>
-          <h2 className="text-xl font-bold text-foreground dark:text-white">
+          <h2 className="text-xl font-bold text-[#0b241c] dark:text-white">
             {course.title[language]}
           </h2>
           <p className="text-sm text-foreground/70">{course.description[language]}</p>

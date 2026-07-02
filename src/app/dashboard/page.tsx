@@ -65,7 +65,7 @@ export default function DashboardPage() {
 
         {/* Mensaje */}
         <div className="flex flex-col gap-3 max-w-md">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground dark:text-white">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#0b241c] dark:text-white">
             {language === "es"
               ? "Contenido exclusivo para alumnos"
               : "Exclusive content for students"}
@@ -87,7 +87,7 @@ export default function DashboardPage() {
           </a>
           <a
             href="/"
-            className="bg-pch-card border border-pch-border text-foreground dark:text-white rounded-full px-8 py-4 font-bold text-sm hover:bg-pch-input transition-all"
+            className="bg-pch-card border border-pch-border text-[#0b241c] dark:text-white rounded-full px-8 py-4 font-bold text-sm hover:bg-pch-input transition-all"
           >
             {language === "es" ? "Volver al inicio" : "Back to home"}
           </a>
@@ -112,7 +112,7 @@ export default function DashboardPage() {
           <div className="w-10 h-10 rounded-full bg-pch-primary/20 flex items-center justify-center">
             <GraduationCap className="w-5 h-5 text-pch-primary" />
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground dark:text-white">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#0b241c] dark:text-white">
             {language === "es" ? "Tu Área de Aprendizaje" : "Your Learning Area"}
           </h1>
         </div>

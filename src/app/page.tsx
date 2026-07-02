@@ -27,16 +27,16 @@ export default function Home() {
       <header className="w-full max-w-6xl mx-auto py-6 px-6 flex items-center justify-between z-10 relative">
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="logforinvestor logo" width={32} height={32} className="dark:brightness-200" />
-          <div className="text-2xl font-bold tracking-tight text-foreground dark:text-white hidden sm:block">
+          <div className="text-2xl font-bold tracking-tight text-[#0b241c] dark:text-white hidden sm:block">
             log<span className="text-pch-primary">forinvestor</span>.com
           </div>
         </div>
         <div className="flex items-center gap-4 md:gap-6">
           <nav className="hidden md:flex gap-6">
-            <a href="#smart-money" className="text-sm font-medium text-foreground dark:text-white hover:text-pch-primary transition-colors">
+            <a href="#smart-money" className="text-sm font-medium text-[#0b241c] dark:text-white hover:text-pch-primary transition-colors">
               {t.nav.filter}
             </a>
-            <a href="#calculator" className="text-sm font-medium text-foreground dark:text-white hover:text-pch-primary transition-colors">
+            <a href="#calculator" className="text-sm font-medium text-[#0b241c] dark:text-white hover:text-pch-primary transition-colors">
               {t.nav.calculator}
             </a>
             <a href="#curso" className="text-sm font-medium text-pch-primary hover:text-pch-secondary transition-colors">
@@ -60,13 +60,13 @@ export default function Home() {
             <div className="flex items-center gap-2 border border-pch-border rounded-full p-1 bg-pch-card">
               <button 
                 onClick={() => setLanguage("en")}
-                className={`text-xs font-bold px-3 py-1 rounded-full transition-colors ${language === 'en' ? 'bg-pch-primary text-white dark:text-[#0b241c]' : 'text-foreground dark:text-white hover:text-pch-primary'}`}
+                className={`text-xs font-bold px-3 py-1 rounded-full transition-colors ${language === 'en' ? 'bg-pch-primary text-white dark:text-[#0b241c]' : 'text-[#0b241c] dark:text-white hover:text-pch-primary'}`}
               >
                 EN
               </button>
               <button 
                 onClick={() => setLanguage("es")}
-                className={`text-xs font-bold px-3 py-1 rounded-full transition-colors ${language === 'es' ? 'bg-pch-primary text-white dark:text-[#0b241c]' : 'text-foreground dark:text-white hover:text-pch-primary'}`}
+                className={`text-xs font-bold px-3 py-1 rounded-full transition-colors ${language === 'es' ? 'bg-pch-primary text-white dark:text-[#0b241c]' : 'text-[#0b241c] dark:text-white hover:text-pch-primary'}`}
               >
                 ES
               </button>
@@ -92,7 +92,7 @@ export default function Home() {
               <a 
                 href="#smart-money" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-sm font-bold text-foreground dark:text-white hover:text-pch-primary"
+                className="text-sm font-bold text-[#0b241c] dark:text-white hover:text-pch-primary"
               >
                 {t.nav.filter}
               </a>
@@ -100,7 +100,7 @@ export default function Home() {
               <a 
                 href="#calculator" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-sm font-bold text-foreground dark:text-white hover:text-pch-primary"
+                className="text-sm font-bold text-[#0b241c] dark:text-white hover:text-pch-primary"
               >
                 {t.nav.calculator}
               </a>

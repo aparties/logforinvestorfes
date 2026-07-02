@@ -20,7 +20,7 @@ export default function LegalLayout({ children }: { children: ReactNode }) {
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-foreground dark:text-white"
+            className="text-lg font-bold tracking-tight text-[#0b241c] dark:text-white"
           >
             log<span className="text-pch-primary">forinvestor</span>.com
           </Link>

@@ -60,7 +60,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               height={28}
               className="dark:brightness-200"
             />
-            <span className="text-lg font-bold tracking-tight text-foreground dark:text-white hidden sm:block">
+            <span className="text-lg font-bold tracking-tight text-[#0b241c] dark:text-white hidden sm:block">
               log<span className="text-pch-primary">forinvestor</span>.com
             </span>
           </a>
@@ -71,13 +71,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex items-center gap-1 border border-pch-border rounded-full p-1 bg-pch-card">
               <button
                 onClick={() => setLanguage("en")}
-                className={`text-xs font-bold px-2.5 py-1 rounded-full transition-colors ${language === "en" ? "bg-pch-primary text-white dark:text-[#0b241c]" : "text-foreground dark:text-white"}`}
+                className={`text-xs font-bold px-2.5 py-1 rounded-full transition-colors ${language === "en" ? "bg-pch-primary text-white dark:text-[#0b241c]" : "text-[#0b241c] dark:text-white"}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLanguage("es")}
-                className={`text-xs font-bold px-2.5 py-1 rounded-full transition-colors ${language === "es" ? "bg-pch-primary text-white dark:text-[#0b241c]" : "text-foreground dark:text-white"}`}
+                className={`text-xs font-bold px-2.5 py-1 rounded-full transition-colors ${language === "es" ? "bg-pch-primary text-white dark:text-[#0b241c]" : "text-[#0b241c] dark:text-white"}`}
               >
                 ES
               </button>
@@ -113,7 +113,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   </span>
                 </div>
               )}
-              <span className="text-xs font-semibold text-foreground dark:text-white hidden sm:block">
+              <span className="text-xs font-semibold text-[#0b241c] dark:text-white hidden sm:block">
                 {displayName.split(" ")[0]}
               </span>
             </div>

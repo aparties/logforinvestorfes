@@ -92,7 +92,7 @@ export function AuthButton() {
               <User className="w-3.5 h-3.5 text-white" />
             </div>
           )}
-          <span className="text-xs font-semibold text-foreground dark:text-white pr-2 hidden sm:block max-w-[100px] truncate">
+          <span className="text-xs font-semibold text-[#0b241c] dark:text-white pr-2 hidden sm:block max-w-[100px] truncate">
             {displayName.split(" ")[0]}
           </span>
         </button>
@@ -112,7 +112,7 @@ export function AuthButton() {
             >
               {/* Info del usuario */}
               <div className="px-4 py-3 border-b border-pch-border">
-                <p className="text-xs font-semibold text-foreground dark:text-white truncate">
+                <p className="text-xs font-semibold text-[#0b241c] dark:text-white truncate">
                   {displayName}
                 </p>
                 <p className="text-xs text-foreground/50 truncate mt-0.5">
@@ -123,7 +123,7 @@ export function AuthButton() {
               <Link
                 href="/dashboard"
                 onClick={() => setMenuOpen(false)}
-                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-foreground dark:text-white hover:bg-pch-input transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-[#0b241c] dark:text-white hover:bg-pch-input transition-colors"
               >
                 <GraduationCap className="w-4 h-4 flex-shrink-0 text-pch-primary" />
                 {language === "es" ? "Mis Cursos" : "My Courses"}
@@ -156,7 +156,7 @@ export function AuthButton() {
       className={`
         flex items-center gap-2 px-3 py-2 rounded-xl
         border border-pch-border bg-pch-card
-        text-xs font-semibold text-foreground dark:text-white
+        text-xs font-semibold text-[#0b241c] dark:text-white
         hover:bg-pch-input hover:border-pch-primary/50
         transition-all duration-200 cursor-pointer
         disabled:opacity-60 disabled:cursor-not-allowed

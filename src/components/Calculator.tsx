@@ -68,10 +68,10 @@ export const Calculator = () => {
   };
 
   const inputClass =
-    "w-full bg-pch-input border border-pch-border rounded-2xl px-6 py-4 text-foreground dark:text-white focus:outline-none focus:border-pch-primary transition-colors";
+    "w-full bg-pch-input border border-pch-border rounded-2xl px-6 py-4 text-[#0b241c] dark:text-white focus:outline-none focus:border-pch-primary transition-colors";
 
   const pillActive   = "bg-pch-primary text-white dark:text-[#0b241c] border-pch-primary shadow-md shadow-pch-primary/20";
-  const pillInactive = "bg-pch-input border-pch-border text-foreground dark:text-white hover:border-pch-primary/50";
+  const pillInactive = "bg-pch-input border-pch-border text-[#0b241c] dark:text-white hover:border-pch-primary/50";
 
   return (
     <section id="calculator" className="py-20 px-6 max-w-4xl mx-auto w-full">
@@ -83,7 +83,7 @@ export const Calculator = () => {
           <div className="w-16 h-16 rounded-full bg-pch-primary/10 flex items-center justify-center mb-6">
             <CalcIcon className="w-8 h-8 text-pch-primary" />
           </div>
-          <h2 className="text-3xl font-bold text-foreground dark:text-white mb-2">
+          <h2 className="text-3xl font-bold text-[#0b241c] dark:text-white mb-2">
             {t.calculator.title}
           </h2>
           <p className="text-foreground">{t.calculator.subtitle}</p>
@@ -142,7 +142,7 @@ export const Calculator = () => {
                   step={1}
                   value={contribution}
                   onChange={(e) => setContribution(Number(e.target.value))}
-                  className="w-full bg-pch-input border border-pch-border rounded-2xl pl-10 pr-6 py-4 text-foreground dark:text-white focus:outline-none focus:border-pch-primary transition-colors"
+                  className="w-full bg-pch-input border border-pch-border rounded-2xl pl-10 pr-6 py-4 text-[#0b241c] dark:text-white focus:outline-none focus:border-pch-primary transition-colors"
                 />
               </div>
               <p className="text-xs text-foreground/40 mt-1.5 pl-1">
@@ -194,7 +194,7 @@ export const Calculator = () => {
                   step={0.1}
                   value={investmentRatePct}
                   onChange={(e) => setInvestmentRatePct(Number(e.target.value))}
-                  className="w-full bg-pch-input border border-pch-border rounded-2xl px-6 py-4 pr-12 text-foreground dark:text-white focus:outline-none focus:border-pch-primary transition-colors"
+                  className="w-full bg-pch-input border border-pch-border rounded-2xl px-6 py-4 pr-12 text-[#0b241c] dark:text-white focus:outline-none focus:border-pch-primary transition-colors"
                 />
                 <span className="absolute right-5 top-1/2 -translate-y-1/2 text-pch-primary font-bold text-sm pointer-events-none">
                   %
@@ -208,7 +208,7 @@ export const Calculator = () => {
 
           {/* ── Columna derecha: resultados ── */}
           <div className="bg-pch-input dark:bg-[#0b241c] rounded-3xl p-8 border border-pch-border/50 flex flex-col justify-center h-full">
-            <h3 className="text-lg font-bold text-foreground dark:text-white mb-6 text-center">
+            <h3 className="text-lg font-bold text-[#0b241c] dark:text-white mb-6 text-center">
               {t.calculator.results_title.replace("{years}", years.toString())}
             </h3>
 
@@ -220,7 +220,7 @@ export const Calculator = () => {
                   : t.calculator.freq_monthly}{" "}
                 {t.calculator.contribution_label}
               </span>
-              <span className="font-bold text-foreground dark:text-white">
+              <span className="font-bold text-[#0b241c] dark:text-white">
                 ${contribution.toLocaleString()}
               </span>
             </div>
@@ -230,7 +230,7 @@ export const Calculator = () => {
                 <p className="text-sm text-foreground/80 mb-1">
                   {t.calculator.savings}
                 </p>
-                <p className="text-2xl font-bold text-foreground dark:text-white">
+                <p className="text-2xl font-bold text-[#0b241c] dark:text-white">
                   ${traditionalValue.toLocaleString()}
                 </p>
               </div>
@@ -267,7 +267,7 @@ export const Calculator = () => {
                       <span className="w-2.5 h-2.5 rounded-full bg-foreground/30 shrink-0" />
                       <span className="text-xs text-foreground/60">{t.calculator.label_invested}</span>
                     </div>
-                    <p className="text-base font-bold text-foreground dark:text-white">
+                    <p className="text-base font-bold text-[#0b241c] dark:text-white">
                       ${Math.round(totalInvested).toLocaleString()}
                     </p>
                     <p className="text-xs text-foreground/40">{investedPct}%</p>
@@ -287,7 +287,7 @@ export const Calculator = () => {
               </div>
 
               <div className="bg-pch-primary/10 rounded-xl p-4 mt-4">
-                <p className="text-sm text-foreground dark:text-white text-center">
+                <p className="text-sm text-[#0b241c] dark:text-white text-center">
                   {t.calculator.losing_msg}{" "}
                   <span className="font-bold text-pch-secondary">
                     ${difference.toLocaleString()}

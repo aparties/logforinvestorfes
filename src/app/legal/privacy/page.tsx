@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="prose prose-invert max-w-none">
       <div className="mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#0b241c] dark:text-white mb-2">
           Privacy Policy
         </h1>
         <p className="text-foreground/50 text-sm">Last updated: {LAST_UPDATED}</p>
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
       </Section>
 
       <Section title="2. Information We Collect">
-        <h3 className="text-lg font-semibold text-foreground dark:text-white mt-4 mb-2">
+        <h3 className="text-lg font-semibold text-[#0b241c] dark:text-white mt-4 mb-2">
           2.1 Information You Provide Directly
         </h3>
         <ul className="list-disc pl-6 space-y-2 text-foreground/80">
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
           </li>
         </ul>
 
-        <h3 className="text-lg font-semibold text-foreground dark:text-white mt-4 mb-2">
+        <h3 className="text-lg font-semibold text-[#0b241c] dark:text-white mt-4 mb-2">
           2.2 Information Collected Automatically
         </h3>
         <ul className="list-disc pl-6 space-y-2 text-foreground/80">
@@ -282,7 +282,7 @@ function Section({
 }) {
   return (
     <section className="mb-10">
-      <h2 className="text-xl font-bold text-foreground dark:text-white mb-3 pb-2 border-b border-pch-border">
+      <h2 className="text-xl font-bold text-[#0b241c] dark:text-white mb-3 pb-2 border-b border-pch-border">
         {title}
       </h2>
       <div className="text-foreground/80 leading-relaxed space-y-3">{children}</div>

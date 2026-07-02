@@ -15,7 +15,7 @@ export default function TermsPage() {
   return (
     <article className="prose prose-invert max-w-none">
       <div className="mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#0b241c] dark:text-white mb-2">
           Terms of Service
         </h1>
         <p className="text-foreground/50 text-sm">Last updated: {LAST_UPDATED}</p>
@@ -321,7 +321,7 @@ function Section({
 }) {
   return (
     <section className="mb-10">
-      <h2 className="text-xl font-bold text-foreground dark:text-white mb-3 pb-2 border-b border-pch-border">
+      <h2 className="text-xl font-bold text-[#0b241c] dark:text-white mb-3 pb-2 border-b border-pch-border">
         {title}
       </h2>
       <div className="text-foreground/80 leading-relaxed space-y-3">{children}</div>

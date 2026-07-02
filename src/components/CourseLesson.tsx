@@ -53,7 +53,7 @@ export const CourseLesson = ({
         </div>
 
         {/* Título */}
-        <span className="flex-1 font-semibold text-foreground dark:text-white text-sm">
+        <span className="flex-1 font-semibold text-[#0b241c] dark:text-white text-sm">
           {title}
         </span>
 

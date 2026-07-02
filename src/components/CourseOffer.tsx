@@ -13,7 +13,7 @@ export const CourseOffer = () => {
   return (
     <section id="curso" className="py-20 px-6 max-w-7xl mx-auto w-full mb-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-foreground dark:text-white mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#0b241c] dark:text-white mb-6">
           {t.course.title}
         </h2>
         <p className="text-foreground text-lg max-w-2xl mx-auto">
@@ -43,7 +43,7 @@ export const CourseOffer = () => {
             </div>
 
             {/* Nombre del curso */}
-            <h3 className="text-2xl font-bold text-foreground dark:text-white mb-2">
+            <h3 className="text-2xl font-bold text-[#0b241c] dark:text-white mb-2">
               {t.course.course_basic_name}
             </h3>
             <p className="text-foreground/60 mb-6 text-sm leading-relaxed">
@@ -52,7 +52,7 @@ export const CourseOffer = () => {
 
             {/* Precio */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-5xl font-bold text-foreground dark:text-white">
+              <span className="text-5xl font-bold text-[#0b241c] dark:text-white">
                 {t.course.course_basic_price}
               </span>
               <span className="text-sm text-foreground/50">{t.course.payment_type}</span>
@@ -65,7 +65,7 @@ export const CourseOffer = () => {
                   <div className="min-w-5 h-5 rounded-full bg-pch-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3 h-3 text-pch-primary" />
                   </div>
-                  <span className="text-foreground dark:text-white text-sm">
+                  <span className="text-[#0b241c] dark:text-white text-sm">
                     {feature}
                   </span>
                 </li>
@@ -93,7 +93,7 @@ export const CourseOffer = () => {
               <div className="w-10 h-10 rounded-full bg-pch-primary/20 flex items-center justify-center shrink-0">
                 <BookOpen className="w-5 h-5 text-pch-primary" />
               </div>
-              <h4 className="text-base font-bold text-foreground dark:text-white">
+              <h4 className="text-base font-bold text-[#0b241c] dark:text-white">
                 {t.course.modules_label}
               </h4>
             </div>

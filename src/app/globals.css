@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Modo Claro - Tonos verdes suaves y limpios */
+  /* Modo Claro */
   --background: #f4fbf8;
   --foreground: #0b241c;
-  
-  --primary: #2d9368; /* Verde más oscuro para legibilidad sobre blanco */
+
+  --primary: #2d9368;
   --secondary: #57cc99;
   --card: #ffffff;
   --input: #eaf5f0;
-  --border: #d1e6dd;
+  --border: #c8dfd8;
 }
 
 .dark {
-  /* Modo Oscuro - Skiz-Inspired original */
+  /* Modo Oscuro */
   --background: #0b241c;
   --foreground: #a8b5b0;
-  
+
   --primary: #57cc99;
   --secondary: #80ed99;
   --card: #143028;
@@ -25,13 +25,13 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-pch-primary: var(--primary);
-  --color-pch-secondary: var(--secondary);
-  --color-pch-card: var(--card);
-  --color-pch-input: var(--input);
-  --color-pch-border: var(--border);
+  --color-background:   var(--background);
+  --color-foreground:   var(--foreground);
+  --color-pch-primary:  var(--primary);
+  --color-pch-secondary:var(--secondary);
+  --color-pch-card:     var(--card);
+  --color-pch-input:    var(--input);
+  --color-pch-border:   var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
