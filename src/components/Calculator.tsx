@@ -49,9 +49,16 @@ export const Calculator = () => {
     return Math.round(total);
   };
 
+  /** Capital total aportado: capital inicial + todos los aportes periódicos */
+  const monthlyEquiv = freq === "weekly" ? contribution * (52 / 12) : contribution;
+  const totalInvested = initialAmount + monthlyEquiv * years * 12;
+
   const traditionalValue = calculateFutureValue(traditionalRate);
   const investmentValue  = calculateFutureValue(investmentRate);
   const difference       = investmentValue - traditionalValue;
+  const gains            = investmentValue - totalInvested;
+  const investedPct      = Math.min(100, Math.round((totalInvested / investmentValue) * 100));
+  const gainsPct         = 100 - investedPct;
 
   /** Al seleccionar un ETF precarga su tasa */
   const handleEtfSelect = (ticker: EtfTicker) => {
@@ -237,6 +244,46 @@ export const Calculator = () => {
                 <p className="text-4xl font-bold text-pch-primary">
                   ${investmentValue.toLocaleString()}
                 </p>
+              </div>
+
+              {/* ── Desglose: aportado vs ganancia ── */}
+              <div>
+                {/* Barra proporcional */}
+                <div className="flex rounded-full overflow-hidden h-3 mb-3">
+                  <div
+                    className="bg-foreground/30 transition-all duration-500"
+                    style={{ width: `${investedPct}%` }}
+                  />
+                  <div
+                    className="bg-pch-primary transition-all duration-500"
+                    style={{ width: `${gainsPct}%` }}
+                  />
+                </div>
+
+                {/* Leyenda */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-pch-card rounded-xl p-3">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="w-2.5 h-2.5 rounded-full bg-foreground/30 shrink-0" />
+                      <span className="text-xs text-foreground/60">{t.calculator.label_invested}</span>
+                    </div>
+                    <p className="text-base font-bold text-foreground dark:text-white">
+                      ${Math.round(totalInvested).toLocaleString()}
+                    </p>
+                    <p className="text-xs text-foreground/40">{investedPct}%</p>
+                  </div>
+
+                  <div className="bg-pch-card rounded-xl p-3">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="w-2.5 h-2.5 rounded-full bg-pch-primary shrink-0" />
+                      <span className="text-xs text-foreground/60">{t.calculator.label_gains}</span>
+                    </div>
+                    <p className="text-base font-bold text-pch-primary">
+                      ${Math.round(gains).toLocaleString()}
+                    </p>
+                    <p className="text-xs text-foreground/40">{gainsPct}%</p>
+                  </div>
+                </div>
               </div>
 
               <div className="bg-pch-primary/10 rounded-xl p-4 mt-4">
