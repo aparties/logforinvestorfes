@@ -72,6 +72,13 @@ export const CourseOffer = () => {
               ))}
             </ul>
 
+            {/* Máxima */}
+            <div className="border-l-2 border-pch-primary/40 pl-4 mb-6">
+              <p className="text-xs italic text-foreground/50 leading-relaxed">
+                &ldquo;{t.course.maxim}&rdquo;
+              </p>
+            </div>
+
             {/* CTA */}
             <button className="w-full bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-4 font-bold text-base hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/30 transition-all">
               {t.course.btn_buy}
