@@ -49,10 +49,9 @@ export function AuthButton() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [signingIn, setSigningIn] = useState(false);
 
-  const handleSignIn = async () => {
+  const handleSignIn = () => {
     setSigningIn(true);
-    await signInWithGoogle();
-    setSigningIn(false);
+    window.location.href = "/api/auth/login";
   };
 
   // Mientras carga, mostrar un placeholder
