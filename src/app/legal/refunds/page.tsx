@@ -149,16 +149,7 @@ export default function RefundPolicyPage() {
         </p>
       </Section>
 
-      <Section title="7. Bundle Purchases">
-        <p>
-          If you purchased the Bundle (Basic + Intermediate courses), a refund
-          will cover the full bundle price and revoke access to all included
-          courses. Partial refunds for individual courses within a bundle are not
-          available.
-        </p>
-      </Section>
-
-      <Section title="8. Contact">
+      <Section title="7. Contact">
         <p>
           For any questions about our refund policy or to initiate a refund:
         </p>

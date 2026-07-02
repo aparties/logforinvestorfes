@@ -5,13 +5,13 @@ export const dictionaries = {
     nav: {
       filter: "Smart Money Filter",
       calculator: "Calculator",
-      course: "Courses",
+      course: "Course",
     },
     hero: {
       title: "Invest with logic, not magic promises",
       subtitle: "Discover where the 'Smart Money' is for free and learn a validated system to invest long-term without wasting time.",
       cta_primary: "View Smart Money Free",
-      cta_secondary: "Learn to Invest",
+      cta_secondary: "Get the Course",
     },
     filter: {
       title: "Smart Money Filter",
@@ -40,33 +40,16 @@ export const dictionaries = {
     course: {
       title: "From Spectator to Investor",
       subtitle: "A direct, uncomplicated method based on the Weinstein system to start investing passively and safely.",
-      badge_basic: "Basic",
-      badge_intermediate: "Intermediate",
-      badge_bundle: "Best Value",
+      badge_basic: "Basic Course",
       course_basic_name: "Passive Investing",
-      course_basic_desc: "The basic system to trade without stress.",
+      course_basic_desc: "The complete system to invest without stress. Lifetime access, automated after payment.",
       course_basic_price: "$99",
-      course_int_name: "Active Investing (Weinstein)",
-      course_int_desc: "Advanced methods to time the market.",
-      course_int_price: "$147",
-      course_bundle_name: "Full Bundle (Basic + Int)",
-      course_bundle_desc: "Get both courses and master the market.",
-      course_bundle_price: "$197",
       payment_type: "one-time payment",
       features_basic: [
-        "Lifetime access to basic video lessons.",
+        "Lifetime access to all video lessons.",
         "Basic use of the Weinstein system.",
-        "Automated access after payment."
-      ],
-      features_int: [
-        "Lifetime access to intermediate video lessons.",
-        "Learn to read Smart Money deeply.",
-        "Advanced use of the Weinstein system."
-      ],
-      features_bundle: [
-        "All features from Basic and Intermediate.",
-        "Complete mastering of the system.",
-        "Best value for your money."
+        "Automated access after payment.",
+        "Free Smart Money Filter included.",
       ],
       btn_buy: "Buy Immediate Access",
       stripe_msg: "Secure payment processed by Stripe.",
@@ -83,13 +66,13 @@ export const dictionaries = {
     nav: {
       filter: "Filtro Smart Money",
       calculator: "Calculadora",
-      course: "Cursos",
+      course: "Curso",
     },
     hero: {
       title: "Invierte con lógica, no con promesas mágicas",
       subtitle: "Descubre dónde está el 'Smart Money' de forma gratuita y aprende un sistema validado para invertir a largo plazo sin perder tiempo operativo.",
       cta_primary: "Ver Smart Money Gratis",
-      cta_secondary: "Aprender a Invertir",
+      cta_secondary: "Obtener el Curso",
     },
     filter: {
       title: "Filtro Smart Money",
@@ -118,33 +101,16 @@ export const dictionaries = {
     course: {
       title: "Pasa de Espectador a Inversor",
       subtitle: "Un método directo, sin complicaciones y basado en el sistema de Weinstein para empezar a invertir de forma pasiva y protegida.",
-      badge_basic: "Básico",
-      badge_intermediate: "Intermedio",
-      badge_bundle: "Mejor Valor",
+      badge_basic: "Curso Básico",
       course_basic_name: "Inversión Pasiva",
-      course_basic_desc: "El sistema básico que necesitas para operar sin estrés.",
+      course_basic_desc: "El sistema completo para invertir sin estrés. Acceso de por vida, automatizado tras el pago.",
       course_basic_price: "$99",
-      course_int_name: "Inversión Activa (Weinstein)",
-      course_int_desc: "Métodos avanzados para analizar el mercado.",
-      course_int_price: "$147",
-      course_bundle_name: "Bundle (Básico + Int)",
-      course_bundle_desc: "Obtén ambos cursos y domina el mercado.",
-      course_bundle_price: "$197",
       payment_type: "pago único",
       features_basic: [
-        "Acceso de por vida a lecciones básicas.",
+        "Acceso de por vida a todas las lecciones.",
         "Uso básico del sistema de Weinstein.",
-        "Acceso automatizado post-pago."
-      ],
-      features_int: [
-        "Acceso de por vida a lecciones intermedias.",
-        "Aprende a leer el Smart Money en profundidad.",
-        "Uso avanzado del sistema de Weinstein."
-      ],
-      features_bundle: [
-        "Todas las características de Básico e Intermedio.",
-        "Dominio completo del sistema.",
-        "La mejor relación calidad-precio."
+        "Acceso automatizado post-pago.",
+        "Filtro Smart Money incluido gratis.",
       ],
       btn_buy: "Comprar Acceso Inmediato",
       stripe_msg: "Pago seguro procesado por Stripe.",

@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GraduationCap, ShoppingCart, Lock } from "lucide-react";
+import { GraduationCap, Lock } from "lucide-react";
 import { COURSES } from "@/lib/courses";
 import { CourseLessonsGrid } from "@/components/CourseLessonsGrid";
+
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useAuth } from "@/context/AuthContext";
 import { createClient } from "@/lib/supabase/client";
@@ -15,7 +16,7 @@ const checkEnrollment = async (userId: string): Promise<boolean> => {
     .from("enrollments")
     .select("id")
     .eq("user_id", userId)
-    .in("course_id", ["basic", "bundle"])
+    .in("course_id", ["basic"])
     .eq("status", "active")
     .limit(1)
     .maybeSingle();
@@ -130,28 +131,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* CTA Intermedio */}
-      <div className="bg-pch-card border border-pch-primary/30 rounded-[32px] p-8 shadow-xl flex flex-col md:flex-row items-center gap-6">
-        <div className="w-14 h-14 rounded-full bg-pch-primary/10 flex items-center justify-center shrink-0">
-          <ShoppingCart className="w-7 h-7 text-pch-primary" />
-        </div>
-        <div className="flex-1 text-center md:text-left">
-          <h3 className="text-lg font-bold text-foreground dark:text-white mb-1">
-            {COURSES.intermediate.title[language]}
-          </h3>
-          <p className="text-foreground/60 text-sm">
-            {language === "es"
-              ? "Próximamente disponible. Aprende el sistema Weinstein para identificar el momento óptimo de entrada."
-              : "Coming soon. Learn the Weinstein system to identify the optimal entry point."}
-          </p>
-        </div>
-        <a
-          href="/#curso"
-          className="shrink-0 bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-3 font-bold text-sm hover:opacity-90 transition-all whitespace-nowrap"
-        >
-          {language === "es" ? "Ver Oferta" : "View Offer"}
-        </a>
-      </div>
+
     </div>
   );
 }

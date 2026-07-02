@@ -1,5 +1,5 @@
 /**
- * Configuración central de cursos y lecciones.
+ * Configuración central del curso básico de inversión.
  * Los videos están alojados en Bunny.net Stream (Library ID: 693818).
  * Embed URL: https://iframe.mediadelivery.net/embed/{libraryId}/{videoId}
  */
@@ -13,7 +13,7 @@ export type Lesson = {
   bunnyVideoId: string;
 };
 
-export type CourseId = "basic" | "intermediate";
+export type CourseId = "basic";
 
 export type Course = {
   id: CourseId;
@@ -83,18 +83,6 @@ export const COURSES: Record<CourseId, Course> = {
         bunnyVideoId: "4931c9a4-568d-4650-ae1d-dd6bb6dfc48a",
       },
     ],
-  },
-  intermediate: {
-    id: "intermediate",
-    title: {
-      en: "Active Investing (Weinstein)",
-      es: "Inversión Activa (Weinstein)",
-    },
-    description: {
-      en: "Advanced methods to time the market.",
-      es: "Métodos avanzados para analizar el mercado.",
-    },
-    lessons: [],
   },
 };
 
