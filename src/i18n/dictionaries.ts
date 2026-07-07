@@ -53,7 +53,7 @@ export const dictionaries = {
       badge_basic: "The Financial Ark",
       course_basic_name: "Passive Investing — The Financial Ark",
       course_basic_desc: "A reengineering protocol for those who are done spectating and are ready to install a financial system built to last.",
-      course_basic_price: "S/ 346",
+      course_basic_price: "$99",
       payment_type: "one-time payment",
       features_basic: [
         "🔍 Audit your mental hardware — Eliminate the emotional and spiritual bugs draining your financial bandwidth.",
@@ -137,7 +137,7 @@ export const dictionaries = {
       badge_basic: "El Arca Financiera",
       course_basic_name: "Inversión Pasiva — El Arca Financiera",
       course_basic_desc: "Un protocolo de reingeniería para quienes dejaron de ser espectadores y están listos para instalar un sistema financiero construido para durar.",
-      course_basic_price: "S/ 346",
+      course_basic_price: "$99",
       payment_type: "pago único",
       features_basic: [
         "🔍 Audita tu hardware mental — Elimina los bugs emocionales y espirituales que drenan tu ancho de banda financiero.",
