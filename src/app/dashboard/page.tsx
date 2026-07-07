@@ -129,7 +129,7 @@ export default function DashboardPage() {
       {/* Glow decorativo */}
       <div className="relative">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-pch-primary/5 rounded-full blur-[80px] pointer-events-none -z-10" />
-        <CourseDashboard course={basicCourse} userId={user.id} />
+        <CourseDashboard course={basicCourse} userId={user.id} userEmail={user.email ?? ""} />
       </div>
 
 

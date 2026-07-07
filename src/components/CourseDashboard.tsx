@@ -13,13 +13,15 @@ import {
 import type { Course } from "@/lib/courses";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { CommitmentLetter } from "@/components/CommitmentLetter";
 
 type CourseDashboardProps = {
   course: Course;
   userId: string;
+  userEmail: string;
 };
 
-export const CourseDashboard = ({ course, userId }: CourseDashboardProps) => {
+export const CourseDashboard = ({ course, userId, userEmail }: CourseDashboardProps) => {
   const { language } = useLanguage();
   const [completedLessonIds, setCompletedLessonIds] = useState<string[]>([]);
   const [activeLessonIndex, setActiveLessonIndex] = useState<number>(0);
@@ -191,12 +193,30 @@ export const CourseDashboard = ({ course, userId }: CourseDashboardProps) => {
         </div>
 
         {/* Reproductor de Video */}
-        <div className="mb-8">
+        <div className="mb-8 print:hidden">
           <VideoPlayer 
             videoId={activeLesson.bunnyVideoId} 
             title={activeLesson.title[language]} 
           />
         </div>
+
+        {/* Carta de Compromiso Solemne (Solo en el Módulo 3 / lesson-3) */}
+        {activeLesson.id === "lesson-3" && (
+          <div className="mb-8">
+            <CommitmentLetter
+              studentEmail={userEmail}
+              isAlreadySigned={isCurrentCompleted}
+              onSign={() => {
+                const newCompleted = completedLessonIds.includes(activeLesson.id)
+                  ? completedLessonIds
+                  : [...completedLessonIds, activeLesson.id];
+
+                setCompletedLessonIds(newCompleted);
+                localStorage.setItem(`lfi_progress_${userId}`, JSON.stringify(newCompleted));
+              }}
+            />
+          </div>
+        )}
 
         {/* Sección de Recursos Descargables */}
         {activeLesson.resources && activeLesson.resources.length > 0 && (
@@ -230,31 +250,33 @@ export const CourseDashboard = ({ course, userId }: CourseDashboardProps) => {
           </div>
         )}
 
-        {/* Barra de Acciones / Avanzar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-pch-border pt-6 mt-6">
-          <div>
-            {isLastLesson && isCurrentCompleted && (
-              <div className="flex items-center gap-3 text-pch-primary bg-pch-primary/10 border border-pch-primary/20 px-4 py-2.5 rounded-xl">
-                <Award className="w-5 h-5 shrink-0" />
-                <span className="text-xs font-medium leading-relaxed max-w-sm">
-                  {tLMS.congratsDesc}
-                </span>
-              </div>
-            )}
-          </div>
+        {/* Barra de Acciones / Avanzar (Oculta si es la carta de compromiso y aún no se ha firmado) */}
+        {!(activeLesson.id === "lesson-3" && !isCurrentCompleted) && (
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-pch-border pt-6 mt-6 print:hidden">
+            <div>
+              {isLastLesson && isCurrentCompleted && (
+                <div className="flex items-center gap-3 text-pch-primary bg-pch-primary/10 border border-pch-primary/20 px-4 py-2.5 rounded-xl">
+                  <Award className="w-5 h-5 shrink-0" />
+                  <span className="text-xs font-medium leading-relaxed max-w-sm">
+                    {tLMS.congratsDesc}
+                  </span>
+                </div>
+              )}
+            </div>
 
-          <button
-            onClick={handleCompleteAndContinue}
-            className="w-full sm:w-auto bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-8 py-4 font-bold text-sm hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/30 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
-          >
-            <span>
-              {isCurrentCompleted && !isLastLesson 
-                ? tLMS.nextBtn 
-                : tLMS.completeBtn}
-            </span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
+            <button
+              onClick={handleCompleteAndContinue}
+              className="w-full sm:w-auto bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-8 py-4 font-bold text-sm hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/30 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
+            >
+              <span>
+                {isCurrentCompleted && !isLastLesson 
+                  ? tLMS.nextBtn 
+                  : tLMS.completeBtn}
+              </span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );
