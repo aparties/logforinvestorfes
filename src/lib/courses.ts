@@ -147,6 +147,29 @@ export const COURSES: Record<CourseId, Course> = {
         },
         duration: "",
         bunnyVideoId: "4931c9a4-568d-4650-ae1d-dd6bb6dfc48a",
+        resources: [
+          {
+            name: {
+              en: "ETF Return Calculator (DQYDJ)",
+              es: "Calculadora de Retornos de ETF (DQYDJ)",
+            },
+            url: "https://dqydj.com/etf-return-calculator/?ticker=VOO",
+          },
+          {
+            name: {
+              en: "VOO vs. SPLG Comparison (ETF.com)",
+              es: "Comparación VOO vs. SPLG (ETF.com)",
+            },
+            url: "https://www.etf.com/tools/etf-comparison/VOO-vs-SPLG",
+          },
+          {
+            name: {
+              en: "US Public Debt Chart (FRED)",
+              es: "Gráfico de la Deuda Pública de EE. UU. (FRED)",
+            },
+            url: "https://fred.stlouisfed.org/series/GFDEBTN",
+          },
+        ],
       },
     ],
   },
