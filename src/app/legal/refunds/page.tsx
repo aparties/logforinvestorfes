@@ -109,7 +109,7 @@ export default function RefundPolicyPage() {
             >
               {EMAIL}
             </a>{" "}
-            with the subject line: <strong>"Refund Request — [Your Order ID]"</strong>
+            with the subject line: <strong>{"\"Refund Request — [Your Order ID]\""}</strong>
           </li>
           <li>
             Include in your email:

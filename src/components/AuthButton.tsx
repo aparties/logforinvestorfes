@@ -44,7 +44,7 @@ function GoogleIcon() {
  * - Si el usuario SÍ está autenticado: muestra su avatar/nombre con menú para cerrar sesión.
  */
 export function AuthButton() {
-  const { user, isLoading, signInWithGoogle, signOut } = useAuth();
+  const { user, isLoading, signOut } = useAuth();
   const { t, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [signingIn, setSigningIn] = useState(false);

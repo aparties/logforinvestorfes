@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Sun, Moon, LogOut } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import Link from "next/link";
 
 type DashboardLayoutProps = {
   children: ReactNode;
@@ -52,7 +53,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       <header className="w-full border-b border-pch-border sticky top-0 z-10 bg-background/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo.svg"
               alt="logforinvestor logo"
@@ -63,7 +64,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <span className="text-lg font-bold tracking-tight text-[#0b241c] dark:text-white hidden sm:block">
               log<span className="text-pch-primary">forinvestor</span>.com
             </span>
-          </a>
+          </Link>
 
           {/* Controles */}
           <div className="flex items-center gap-3">

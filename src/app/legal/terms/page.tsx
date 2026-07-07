@@ -62,9 +62,9 @@ export default function TermsPage() {
 
       <Section title="1. Acceptance of Terms">
         <p>
-          By accessing or using {SITE} ("the Service"), operated by{" "}
-          <strong>{OWNER}</strong> ("we", "us", "our"), you agree to be bound
-          by these Terms of Service ("Terms"). If you do not agree with any part
+          By accessing or using {SITE} {"(\"the Service\")"}, operated by{" "}
+          <strong>{OWNER}</strong> {"(\"we\", \"us\", \"our\")"}, you agree to be bound
+          by these Terms of Service {"(\"Terms\")"}. If you do not agree with any part
           of these Terms, you must not use our Service.
         </p>
       </Section>
@@ -179,7 +179,7 @@ export default function TermsPage() {
             personal license to access and view the course content.
           </li>
           <li>
-            "Lifetime access" means access for as long as the platform is
+            {"\"Lifetime access\""} means access for as long as the platform is
             operational. We reserve the right to modify or discontinue the
             Service with reasonable notice.
           </li>
@@ -229,7 +229,7 @@ export default function TermsPage() {
 
       <Section title="9. Disclaimer of Warranties">
         <p>
-          THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES
+          THE SERVICE IS PROVIDED {"\"AS IS\""} AND {"\"AS AVAILABLE\""} WITHOUT WARRANTIES
           OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-foreground/80 mt-2">
@@ -276,7 +276,7 @@ export default function TermsPage() {
       <Section title="12. Changes to Terms">
         <p>
           We reserve the right to modify these Terms at any time. We will notify
-          users of significant changes by updating the "Last updated" date.
+          users of significant changes by updating the {"\"Last updated\""} date.
           Continued use of the Service after changes constitutes acceptance of
           the revised Terms.
         </p>

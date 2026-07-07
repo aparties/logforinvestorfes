@@ -2,6 +2,7 @@
 
 import { Check, Star, BookOpen } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useAuth } from "@/context/AuthContext";
 
 /**
  * Componente que muestra la oferta del único curso básico de inversión.
@@ -9,6 +10,33 @@ import { useLanguage } from "@/i18n/LanguageContext";
  */
 export const CourseOffer = () => {
   const { t } = useLanguage();
+  const { user } = useAuth();
+
+  const handleBuy = () => {
+    if (!user) {
+      // Redirigir a inicio de sesión si no está autenticado
+      window.location.href = "/api/auth/login";
+      return;
+    }
+
+    const checkoutUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_CHECKOUT_URL;
+    if (!checkoutUrl) {
+      console.error("Missing NEXT_PUBLIC_LEMON_SQUEEZY_CHECKOUT_URL env variable");
+      return;
+    }
+
+    try {
+      const url = new URL(checkoutUrl);
+      url.searchParams.set("checkout[custom][user_id]", user.id);
+      url.searchParams.set("checkout[custom][course_id]", "basic");
+      if (user.email) {
+        url.searchParams.set("checkout[email]", user.email);
+      }
+      window.location.href = url.toString();
+    } catch (err) {
+      console.error("Invalid Lemon Squeezy checkout URL:", err);
+    }
+  };
 
   return (
     <section id="curso" className="py-20 px-6 max-w-7xl mx-auto w-full mb-20">
@@ -80,7 +108,10 @@ export const CourseOffer = () => {
             </div>
 
             {/* CTA */}
-            <button className="w-full bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-4 font-bold text-base hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/30 transition-all">
+            <button
+              onClick={handleBuy}
+              className="w-full bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-4 font-bold text-base hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/30 transition-all cursor-pointer"
+            >
               {t.course.btn_buy}
             </button>
           </div>

@@ -8,6 +8,7 @@ import { CourseLessonsGrid } from "@/components/CourseLessonsGrid";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useAuth } from "@/context/AuthContext";
 import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
 
 /** Verifica si el usuario tiene matrícula activa en el curso básico o bundle */
 const checkEnrollment = async (userId: string): Promise<boolean> => {
@@ -79,18 +80,18 @@ export default function DashboardPage() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <a
+          <Link
             href="/#curso"
             className="bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-8 py-4 font-bold text-sm hover:opacity-90 hover:shadow-lg hover:shadow-pch-primary/20 transition-all"
           >
             {language === "es" ? "Ver Planes y Precios" : "View Plans & Pricing"}
-          </a>
-          <a
+          </Link>
+          <Link
             href="/"
             className="bg-pch-card border border-pch-border text-[#0b241c] dark:text-white rounded-full px-8 py-4 font-bold text-sm hover:bg-pch-input transition-all"
           >
             {language === "es" ? "Volver al inicio" : "Back to home"}
-          </a>
+          </Link>
         </div>
 
         {/* Nota de soporte */}

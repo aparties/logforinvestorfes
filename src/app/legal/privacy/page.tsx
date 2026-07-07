@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
 
       <Section title="1. Introduction">
         <p>
-          Welcome to <strong>{SITE}</strong> ("we", "us", "our"), operated by{" "}
+          Welcome to <strong>{SITE}</strong> {"(\"we\", \"us\", \"our\")"}, operated by{" "}
           <strong>{OWNER}</strong>, domiciled in Peru. This Privacy Policy
           explains how we collect, use, disclose, and safeguard your information
           when you visit our website{" "}
@@ -179,8 +179,7 @@ export default function PrivacyPolicyPage() {
             data.
           </li>
           <li>
-            <strong>Erasure:</strong> Request deletion of your personal data
-            ("right to be forgotten").
+            <strong>Erasure:</strong> Request deletion of your personal data {"(\"right to be forgotten\")."}
           </li>
           <li>
             <strong>Objection:</strong> Object to the processing of your data.
@@ -232,7 +231,7 @@ export default function PrivacyPolicyPage() {
       <Section title="10. Changes to This Policy">
         <p>
           We may update this Privacy Policy from time to time. We will notify
-          you of any changes by updating the "Last updated" date at the top of
+          you of any changes by updating the {"\"Last updated\""} date at the top of
           this page. Continued use of our services after changes constitutes
           acceptance of the updated policy.
         </p>
