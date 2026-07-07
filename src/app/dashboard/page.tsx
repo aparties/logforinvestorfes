@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GraduationCap, Lock } from "lucide-react";
 import { COURSES } from "@/lib/courses";
-import { CourseLessonsGrid } from "@/components/CourseLessonsGrid";
+import { CourseDashboard } from "@/components/CourseDashboard";
 
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useAuth } from "@/context/AuthContext";
@@ -105,6 +105,8 @@ export default function DashboardPage() {
   }
 
   // Con acceso: muestra el curso
+  if (!user) return null;
+
   return (
     <div className="flex flex-col gap-12">
       {/* Bienvenida */}
@@ -127,9 +129,7 @@ export default function DashboardPage() {
       {/* Glow decorativo */}
       <div className="relative">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-pch-primary/5 rounded-full blur-[80px] pointer-events-none -z-10" />
-        <div className="bg-pch-card border border-pch-border rounded-[32px] p-6 md:p-10 shadow-xl">
-          <CourseLessonsGrid course={basicCourse} />
-        </div>
+        <CourseDashboard course={basicCourse} userId={user.id} />
       </div>
 
 

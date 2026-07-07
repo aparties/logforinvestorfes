@@ -6,11 +6,17 @@
 
 const BUNNY_LIBRARY_ID = "693818";
 
+export type Resource = {
+  name: { en: string; es: string };
+  url: string;
+};
+
 export type Lesson = {
   id: string;
   title: { en: string; es: string };
   duration: string;
   bunnyVideoId: string;
+  resources?: Resource[];
 };
 
 export type CourseId = "basic";
@@ -60,6 +66,15 @@ export const COURSES: Record<CourseId, Course> = {
         },
         duration: "",
         bunnyVideoId: "0445a2bb-5a35-478a-bc11-c3702d68c7b8",
+        resources: [
+          {
+            name: {
+              en: "Editable Commitment Sheet (Excel)",
+              es: "Hoja de Compromiso Editable (Excel)",
+            },
+            url: "/resources/commitment_sheet.xlsx",
+          },
+        ],
       },
       {
         id: "lesson-4",
@@ -78,6 +93,15 @@ export const COURSES: Record<CourseId, Course> = {
         },
         duration: "",
         bunnyVideoId: "bc5a0897-96b8-4dd1-808a-bfab5d9a0ff8",
+        resources: [
+          {
+            name: {
+              en: "Net Worth Statement Template (Excel)",
+              es: "Plantilla de Estado de Patrimonio Neto (Excel)",
+            },
+            url: "/resources/net_worth_statement.xlsx",
+          },
+        ],
       },
       {
         id: "lesson-6",
@@ -87,6 +111,15 @@ export const COURSES: Record<CourseId, Course> = {
         },
         duration: "",
         bunnyVideoId: "f4229dee-9aa2-4506-b1dd-7241fb39ab70",
+        resources: [
+          {
+            name: {
+              en: "Zero-Based Budget Spreadsheet (Excel)",
+              es: "Planilla de Presupuesto Base Cero (Excel)",
+            },
+            url: "/resources/zero_based_budget.xlsx",
+          },
+        ],
       },
       {
         id: "lesson-7",
@@ -96,6 +129,15 @@ export const COURSES: Record<CourseId, Course> = {
         },
         duration: "",
         bunnyVideoId: "fc760048-bbf0-45b3-a808-eb12f9a11c0f",
+        resources: [
+          {
+            name: {
+              en: "Debt Snowball Calculator (Excel)",
+              es: "Calculadora de Bola de Nieve de Deudas (Excel)",
+            },
+            url: "/resources/debt_snowball.xlsx",
+          },
+        ],
       },
       {
         id: "lesson-8",
