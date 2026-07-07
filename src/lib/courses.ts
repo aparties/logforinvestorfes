@@ -96,10 +96,10 @@ export const COURSES: Record<CourseId, Course> = {
         resources: [
           {
             name: {
-              en: "Net Worth Statement Template (Excel)",
-              es: "Plantilla de Estado de Patrimonio Neto (Excel)",
+              en: "Net Worth Calculation Template (Google Sheets)",
+              es: "Plantilla de Cálculo de Patrimonio Neto (Google Sheets)",
             },
-            url: "/resources/net_worth_statement.xlsx",
+            url: "https://docs.google.com/spreadsheets/d/1qgeQMdG2tRCUvB5ldlzxxRvWP4bcUuKbO4C5Y93I4GM/copy",
           },
         ],
       },
@@ -114,10 +114,10 @@ export const COURSES: Record<CourseId, Course> = {
         resources: [
           {
             name: {
-              en: "Zero-Based Budget Spreadsheet (Excel)",
-              es: "Planilla de Presupuesto Base Cero (Excel)",
+              en: "Zero-Based Budget Spreadsheet (Google Sheets)",
+              es: "Planilla de Presupuesto Base Cero (Google Sheets)",
             },
-            url: "/resources/zero_based_budget.xlsx",
+            url: "https://docs.google.com/spreadsheets/d/1qgeQMdG2tRCUvB5ldlzxxRvWP4bcUuKbO4C5Y93I4GM/copy",
           },
         ],
       },
@@ -132,10 +132,10 @@ export const COURSES: Record<CourseId, Course> = {
         resources: [
           {
             name: {
-              en: "Debt Snowball Calculator (Excel)",
-              es: "Calculadora de Bola de Nieve de Deudas (Excel)",
+              en: "Strategic Sieve Debt Tracker (Google Sheets)",
+              es: "Rastreador de Deudas - El Tamiz Estratégico (Google Sheets)",
             },
-            url: "/resources/debt_snowball.xlsx",
+            url: "https://docs.google.com/spreadsheets/d/1qgeQMdG2tRCUvB5ldlzxxRvWP4bcUuKbO4C5Y93I4GM/copy",
           },
         ],
       },
