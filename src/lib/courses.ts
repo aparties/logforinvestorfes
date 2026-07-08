@@ -118,7 +118,7 @@ export const COURSES: Record<CourseId, Course> = {
               en: "Strategic Sieve Debt Tracker (Google Sheets)",
               es: "Rastreador de Deudas - El Tamiz Estratégico (Google Sheets)",
             },
-            url: "https://docs.google.com/spreadsheets/d/1b_BhdE6ckXzuUfS8aRi-4RuNGRTnnpgFFRNST5K4nls/copy",
+            url: "https://docs.google.com/spreadsheets/d/1BgU05ILnqgJzU-1bkLeBThx5NQZXXcO4nvX0j44-Y7w/copy",
           },
         ],
       },
