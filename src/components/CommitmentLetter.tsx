@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { Printer, Check, Star } from "lucide-react";
+import { Printer, Check, Star, Unlock } from "lucide-react";
 
 type CommitmentLetterProps = {
   studentEmail: string;
@@ -26,6 +26,30 @@ export const CommitmentLetter = ({
   const [acknowledgedPart2, setAcknowledgedPart2] = useState(false);
   const [acknowledgedPart3, setAcknowledgedPart3] = useState(false);
   const [isSigned, setIsSigned] = useState(isAlreadySigned);
+
+  useEffect(() => {
+    setIsSigned(isAlreadySigned);
+  }, [isAlreadySigned]);
+
+  // Load saved name and witness on mount
+  useEffect(() => {
+    if (!studentEmail) return;
+    const storedName = localStorage.getItem(`lfi_commitment_name_${studentEmail}`);
+    const storedWitness = localStorage.getItem(`lfi_commitment_witness_${studentEmail}`);
+    if (storedName) setStudentName(storedName);
+    if (storedWitness) setWitnessName(storedWitness);
+  }, [studentEmail]);
+
+  // Save changes to localStorage
+  useEffect(() => {
+    if (!studentEmail) return;
+    localStorage.setItem(`lfi_commitment_name_${studentEmail}`, studentName);
+  }, [studentName, studentEmail]);
+
+  useEffect(() => {
+    if (!studentEmail) return;
+    localStorage.setItem(`lfi_commitment_witness_${studentEmail}`, witnessName);
+  }, [witnessName, studentEmail]);
 
   useEffect(() => {
     // Inicializar la fecha de hoy por defecto
@@ -423,13 +447,24 @@ export const CommitmentLetter = ({
               <Check className="w-5 h-5" />
               <span className="text-sm font-semibold">{t.signedStatus}</span>
             </div>
-            <button
-              onClick={handlePrint}
-              className="w-full sm:w-auto bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-3 font-bold text-xs hover:opacity-90 transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <Printer className="w-4 h-4" />
-              <span>{t.btnPrint}</span>
-            </button>
+            <div className="flex gap-2 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => setIsSigned(false)}
+                className="w-full sm:w-auto border border-pch-primary/45 hover:border-pch-primary text-pch-primary font-bold text-xs rounded-full px-5 py-3 transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+              >
+                <Unlock className="w-3.5 h-3.5" />
+                <span>{language === "es" ? "Editar Firma" : "Edit Signature"}</span>
+              </button>
+              <button
+                type="button"
+                onClick={handlePrint}
+                className="w-full sm:w-auto bg-pch-primary text-white dark:text-[#0b241c] rounded-full px-6 py-3 font-bold text-xs hover:opacity-90 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Printer className="w-4 h-4" />
+                <span>{t.btnPrint}</span>
+              </button>
+            </div>
           </div>
         )}
       </div>
