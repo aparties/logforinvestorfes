@@ -50,7 +50,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header del Dashboard */}
-      <header className="w-full border-b border-pch-border sticky top-0 z-10 bg-background/80 backdrop-blur-md">
+      <header className="w-full border-b border-pch-border sticky top-0 z-10 bg-background/80 backdrop-blur-md print:hidden">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
@@ -133,7 +133,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       </header>
 
       {/* Contenido de la página */}
-      <main className="flex-1 w-full max-w-6xl mx-auto px-6 py-10">
+      <main className="flex-1 w-full max-w-6xl mx-auto px-6 py-10 print:max-w-full print:p-0 print:m-0">
         {children}
       </main>
     </div>

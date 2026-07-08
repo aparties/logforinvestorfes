@@ -14,6 +14,7 @@ import type { Course } from "@/lib/courses";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CommitmentLetter } from "@/components/CommitmentLetter";
+import { AuditCanvas } from "@/components/AuditCanvas";
 
 type CourseDashboardProps = {
   course: Course;
@@ -115,9 +116,9 @@ export const CourseDashboard = ({ course, userId, userEmail }: CourseDashboardPr
   }[language === "es" ? "es" : "en"];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 w-full items-start">
+    <div className="flex flex-col lg:flex-row gap-8 w-full items-start print:block">
       {/* ── BARRA LATERAL (SIDEBAR) DE MÓDULOS ── */}
-      <aside className="w-full lg:w-80 shrink-0 bg-pch-card border border-pch-border rounded-3xl p-6 shadow-md">
+      <aside className="w-full lg:w-80 shrink-0 bg-pch-card border border-pch-border rounded-3xl p-6 shadow-md print:hidden">
         <h3 className="text-sm font-bold text-pch-primary uppercase tracking-wider mb-4 px-2">
           {language === "es" ? "Módulos del Curso" : "Course Modules"}
         </h3>
@@ -173,7 +174,7 @@ export const CourseDashboard = ({ course, userId, userEmail }: CourseDashboardPr
       </aside>
 
       {/* ── ÁREA PRINCIPAL (VIDEO + DESCARGABLES + BOTÓN) ── */}
-      <main className="flex-1 w-full bg-pch-card border border-pch-border rounded-3xl p-6 md:p-8 shadow-md">
+      <main className="flex-1 w-full bg-pch-card border border-pch-border rounded-3xl p-6 md:p-8 shadow-md print:border-0 print:shadow-none print:bg-transparent print:p-0">
         {/* Encabezado del Módulo */}
         <div className="flex flex-col gap-2 mb-6">
           <div className="flex items-center gap-2 text-xs font-bold text-pch-primary uppercase tracking-wider">
@@ -200,8 +201,26 @@ export const CourseDashboard = ({ course, userId, userEmail }: CourseDashboardPr
           />
         </div>
 
-        {/* Carta de Compromiso Solemne (Solo en el Módulo 3 / lesson-3) */}
-        {activeLesson.id === "lesson-3" && (
+        {/* Auditoría Integral (Solo en el Módulo 2 / lesson-2) */}
+        {activeLesson.id === "lesson-2" && (
+          <div className="mb-8 print:m-0 print:p-0">
+            <AuditCanvas
+              userId={userId}
+              isAlreadyCompleted={isCurrentCompleted}
+              onComplete={() => {
+                const newCompleted = completedLessonIds.includes(activeLesson.id)
+                  ? completedLessonIds
+                  : [...completedLessonIds, activeLesson.id];
+
+                setCompletedLessonIds(newCompleted);
+                localStorage.setItem(`lfi_progress_${userId}`, JSON.stringify(newCompleted));
+              }}
+            />
+          </div>
+        )}
+
+        {/* Carta de Compromiso Solemne (Solo en el Módulo 1 / lesson-1) */}
+        {activeLesson.id === "lesson-1" && (
           <div className="mb-8">
             <CommitmentLetter
               studentEmail={userEmail}
