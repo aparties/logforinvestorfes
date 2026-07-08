@@ -248,7 +248,7 @@ export const CourseDashboard = ({ course, userId, userEmail }: CourseDashboardPr
               {activeLesson.resources.map((res, i) => (
                 <a
                   key={i}
-                  href={res.url}
+                  href={typeof res.url === "string" ? res.url : res.url[language]}
                   download
                   className="flex items-center gap-4 p-4 rounded-xl border border-pch-border bg-pch-card hover:border-pch-primary/50 hover:shadow-sm transition-all group"
                 >

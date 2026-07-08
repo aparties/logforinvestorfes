@@ -8,7 +8,7 @@ const BUNNY_LIBRARY_ID = "693818";
 
 export type Resource = {
   name: { en: string; es: string };
-  url: string;
+  url: string | { en: string; es: string };
 };
 
 export type Lesson = {
@@ -51,10 +51,13 @@ export const COURSES: Record<CourseId, Course> = {
         resources: [
           {
             name: {
-              en: "Editable Commitment Sheet (Excel)",
-              es: "Hoja de Compromiso Editable (Excel)",
+              en: "Solemn Commitment Letter (PDF)",
+              es: "Carta de Compromiso Solemne (PDF)",
             },
-            url: "/resources/commitment_sheet.xlsx",
+            url: {
+              en: "/Solemn_Commitment_Letter_Final.pdf",
+              es: "/Carta_de_Compromiso_Solemne.pdf",
+            },
           },
         ],
       },
